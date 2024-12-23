@@ -18,20 +18,22 @@ const BackgroundContainer = styled(Box)(({ theme }) => ({
   position: "relative",
 }));
 
-const BgBubble = ({ children }) => {
+const BgBubble = ({ children, items = [] }) => {
   // Randomized bubbles
-  const bubbles = [
-    {
-      size: `50vw`, // Random size
-      top: `-50%`, // Random position Y-axis
-      left: `60%`, // Random position X-axis
-    },
-    {
-      size: `50vw`, // Random size
-      top: `60%`, // Random position Y-axis
-      left: `-50%`, // Random position X-axis
-    },
-  ];
+  const bubbles = items.length
+    ? items
+    : [
+        {
+          size: `50vw`, // Random size
+          top: `-50%`, // Random position Y-axis
+          left: `60%`, // Random position X-axis
+        },
+        {
+          size: `50vw`, // Random size
+          top: `60%`, // Random position Y-axis
+          left: `-50%`, // Random position X-axis
+        },
+      ];
 
   return (
     <BackgroundContainer>
