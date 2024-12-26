@@ -1,5 +1,6 @@
 import BgBubble from "@/components/images/bubble";
 import OnboardingForm from "@/components/onboarding/OnboardingForm";
+import { Container } from "@mui/material";
 
 export default function Onboarding({}) {
   return (
@@ -12,7 +13,9 @@ export default function Onboarding({}) {
         },
       ]}
     >
-      <OnboardingForm />
+      <Container>
+        <OnboardingForm />
+      </Container>
     </BgBubble>
   );
 }

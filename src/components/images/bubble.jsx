@@ -16,6 +16,7 @@ const Bubble = styled(Box)(({ size, top, left }) => ({
 // Create styled components for the background
 const BackgroundContainer = styled(Box)(({ theme }) => ({
   position: "relative",
+  overflowX: "clip",
 }));
 
 const BgBubble = ({ children, items = [] }) => {

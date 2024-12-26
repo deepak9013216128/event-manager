@@ -20,6 +20,8 @@ const VisuallyHiddenInput = styled("input")({
 export default function Upload() {
   const [previews, setPreviews] = useState([]);
 
+  const placeholderImage = "/explore2.png"; // Replace with your placeholder image path
+
   const handleFileChange = (event) => {
     const files = event.target.files;
     if (files) {
@@ -42,14 +44,45 @@ export default function Upload() {
 
   return (
     <Box>
+      <Button
+        variant="contained"
+        component="label"
+        startIcon={<CloudUploadIcon />}
+      >
+        Upload Files
+        <VisuallyHiddenInput type="file" onChange={handleFileChange} multiple />
+      </Button>
+
       <Box sx={{ display: "flex", flexWrap: "wrap", gap: 2, marginTop: 2 }}>
+        {previews.length === 0 && (
+          <Box
+            sx={{
+              position: "relative",
+              width: 200,
+              height: 200,
+              borderRadius: 2,
+              overflow: "hidden",
+              boxShadow: 2,
+              backgroundColor: "#f0f0f0",
+            }}
+          >
+            <Image
+              src={placeholderImage}
+              alt="placeholder"
+              layout="fill"
+              objectFit="cover"
+              placeholder="blur"
+              blurDataURL="data:image/jpeg;base64,...yourBase64String..."
+            />
+          </Box>
+        )}
         {previews.map((preview, index) => (
           <Box
             key={index}
             sx={{
               position: "relative",
-              width: 100,
-              height: 100,
+              width: 200,
+              height: 200,
               borderRadius: 2,
               overflow: "hidden",
               boxShadow: 2,
@@ -76,14 +109,6 @@ export default function Upload() {
           </Box>
         ))}
       </Box>
-      <Button
-        variant="contained"
-        component="label"
-        startIcon={<CloudUploadIcon />}
-      >
-        Upload Files
-        <VisuallyHiddenInput type="file" onChange={handleFileChange} multiple />
-      </Button>
     </Box>
   );
 }

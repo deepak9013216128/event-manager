@@ -10,6 +10,7 @@ import {
   InputLabel,
   Typography,
   Grid2,
+  Toolbar,
 } from "@mui/material";
 import { Controller, useForm } from "react-hook-form";
 import * as yup from "yup";
@@ -57,8 +58,9 @@ function OnboardingForm({}) {
 
   return (
     <Box component="form" onSubmit={handleSubmit(onSubmit)}>
-      <Grid2 container>
-        <Grid2 size={{ xs: 12, md: 6 }}>
+      <Toolbar />
+      <Grid2 container spacing={2} justifyContent={"space-between"}>
+        <Grid2 size={{ xs: 12, md: 6 }} maxWidth={450}>
           <Typography component={"h1"} variant="h3" gutterBottom>
             Lastly, tell us more <br />
             about yourself
@@ -119,21 +121,21 @@ function OnboardingForm({}) {
               )}
             />
           </Box>
-
-          <Box mt={2}>
+        </Grid2>
+        <Grid2 size={{ xs: 12, md: 6 }}>
+          <Upload />
+        </Grid2>
+        <Grid2 size={12}>
+          <Box mt={2} textAlign={"right"}>
             <Button
               type="submit"
               variant="contained"
               size="large"
               color="secondary"
-              fullWidth
             >
-              Submit
+              Next
             </Button>
           </Box>
-        </Grid2>
-        <Grid2 size={{ xs: 12, md: 6 }}>
-          <Upload />
         </Grid2>
       </Grid2>
     </Box>
