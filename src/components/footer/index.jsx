@@ -52,7 +52,7 @@ function Footer() {
 
   return (
     <Box component={"footer"} sx={{ bgcolor: "primary.main" }}>
-      <Container maxWidth="lg">
+      <Container>
         <Toolbar />
         <Grid2 container spacing={2} justifyContent={"space-between"}>
           <Grid2 size={{ xs: 12, md: 6, lg: 3 }}>
@@ -76,7 +76,7 @@ function Footer() {
               Features
             </Typography>
 
-            <Box minWidth={550}>
+            <Box>
               <List>
                 {pages.map((page) => (
                   <ListItem key={page.label}>
@@ -93,7 +93,7 @@ function Footer() {
               Features
             </Typography>
 
-            <Box minWidth={550}>
+            <Box>
               <List>
                 {pages.map((page) => (
                   <ListItem key={page.label}>
@@ -110,7 +110,7 @@ function Footer() {
               Features
             </Typography>
 
-            <Box minWidth={550}>
+            <Box>
               <List>
                 {pages.map((page) => (
                   <ListItem key={page.label}>
