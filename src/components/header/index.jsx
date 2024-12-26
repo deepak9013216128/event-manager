@@ -17,9 +17,13 @@ function Header({ user }) {
       label: "About-us",
       path: "/about-us",
     },
-    { label: "Events", path: "/events" },
-    { label: "Trips", path: "/trips" },
-    { label: "Media", path: "/media" },
+    {
+      label: "Contact-us",
+      path: "/contact-us",
+    },
+    // { label: "Events", path: "/events" },
+    // { label: "Trips", path: "/trips" },
+    // { label: "Media", path: "/media" },
   ];
 
   return (

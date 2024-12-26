@@ -2,7 +2,7 @@ import React from "react";
 import { Typography, Link, Box } from "@mui/material";
 
 import LoginForm from "@/components/auth/LoginForm";
-import BackgroundImage from "@/components/images/background";
+import { ArrowBack } from "@mui/icons-material";
 
 function LoginPage() {
   return (
@@ -17,12 +17,10 @@ function LoginPage() {
         Welcome Back!
       </Typography>
       <LoginForm />
-      <Typography variant="body1" color={"textPrimary"}>
-        Not Having an account ?
-        <Link href="/sign-up" color={"textPrimary"}>
-          Signup
-        </Link>
-      </Typography>
+      <Link display={"flex"} mt={10} href="/">
+        <ArrowBack />
+        <Typography>Back</Typography>
+      </Link>
     </Box>
   );
 }

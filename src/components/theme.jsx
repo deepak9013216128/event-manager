@@ -122,7 +122,19 @@ let theme = createTheme({
     },
     MuiTextField: {
       styleOverrides: {
-        root: ({ ownerState }) => ({
+        root: ({ ownerState, theme }) => ({
+          color: theme.palette.text.secondary,
+          "& .MuiOutlinedInput-notchedOutline": {
+            borderColor: "rgba(5, 5, 5, 0.23) !important",
+          },
+          ...(ownerState.disabled && {}),
+        }),
+      },
+    },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: ({ ownerState, theme }) => ({
+          color: theme.palette.text.secondary,
           "& .MuiOutlinedInput-notchedOutline": {
             borderColor: "rgba(5, 5, 5, 0.23) !important",
           },

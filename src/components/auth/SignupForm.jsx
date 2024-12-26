@@ -1,24 +1,14 @@
 "use client";
-import React, { useState } from "react";
-import {
-  Box,
-  Button,
-  TextField,
-  Link,
-  InputAdornment,
-  IconButton,
-  InputLabel,
-  Typography,
-} from "@mui/material";
+import React from "react";
+import { Box, Button, TextField, InputLabel } from "@mui/material";
 import { Controller, useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Visibility, VisibilityOff } from "@mui/icons-material";
 // import { authLogin } from "@/services/auth";
 import { useRouter } from "next/navigation";
 // import { PAGE_URLS } from "@/constants/urls";
 
-const loginSchema = yup.object({
+const signupSchema = yup.object({
   identifier: yup
     .number()
     .positive()
@@ -26,16 +16,15 @@ const loginSchema = yup.object({
     .required("Mobile No is required"),
 });
 
-function LoginForm({}) {
+function SignupForm({}) {
   const router = useRouter();
-  const [showPassword, setShowPassword] = useState(false);
   const {
     handleSubmit,
     formState: { errors },
     control,
     reset,
   } = useForm({
-    resolver: yupResolver(loginSchema),
+    resolver: yupResolver(signupSchema),
     defaultValues: {
       identifier: "",
     },
@@ -74,43 +63,6 @@ function LoginForm({}) {
           )}
         />
       </Box>
-      {/* <Box sx={{ mb: 2 }}>
-        <Controller
-          name="password"
-          control={control}
-          render={({ field }) => (
-            <TextField
-              {...field}
-              variant="outlined"
-              fullWidth
-              type={showPassword ? "text" : "password"}
-              placeholder="Password"
-              label="Password"
-              error={!!errors.password}
-              helperText={errors.password ? errors.password.message : ""}
-              InputProps={{
-                endAdornment: (
-                  <InputAdornment position="end">
-                    <IconButton onClick={() => setShowPassword((p) => !p)}>
-                      {showPassword ? (
-                        <VisibilityOff fontSize="small" />
-                      ) : (
-                        <Visibility fontSize="small" />
-                      )}
-                    </IconButton>
-                  </InputAdornment>
-                ),
-              }}
-            />
-          )}
-        />
-      </Box> */}
-      <Typography>
-        Not Having an account?{" "}
-        <Link href="/sign-up" color="primary" underline="hover">
-          Signup
-        </Link>
-      </Typography>
 
       <Box mt={2}>
         <Button
@@ -127,4 +79,4 @@ function LoginForm({}) {
   );
 }
 
-export default LoginForm;
+export default SignupForm;
