@@ -47,6 +47,7 @@ function MediaCard() {
       <CardActions sx={{ display: "flex", justifyContent: "center" }}>
         <Button
           //   size="small"
+          href="/login"
           variant="contained"
           color="secondary"
           sx={{ borderRadius: 5 }}

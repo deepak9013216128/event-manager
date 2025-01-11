@@ -63,6 +63,7 @@ function Header({ user }) {
                 color: "#fff",
                 border: "1px solid #fff",
               }}
+              href="/login"
             >
               Join Comunity
             </Button>

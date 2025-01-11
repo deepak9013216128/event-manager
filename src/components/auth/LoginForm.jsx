@@ -37,7 +37,7 @@ function LoginForm({}) {
   } = useForm({
     resolver: yupResolver(loginSchema),
     defaultValues: {
-      identifier: "",
+      identifier: null,
     },
   });
 
@@ -106,7 +106,7 @@ function LoginForm({}) {
         />
       </Box> */}
       <Typography>
-        Not Having an account?{" "}
+        Not having an account?{" "}
         <Link href="/sign-up" color="primary" underline="hover">
           Signup
         </Link>

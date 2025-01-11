@@ -66,7 +66,7 @@ function Footer() {
               sx={{ mt: { md: 2 } }}
             >
               <Typography color="textPrimary">
-                {"Copyright © 2024 | All Rights Reserved"}
+                {`Copyright © ${new Date().getFullYear()} | All Rights Reserved`}
               </Typography>
             </Box>
           </Grid2>

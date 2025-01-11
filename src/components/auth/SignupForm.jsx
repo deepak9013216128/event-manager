@@ -26,7 +26,7 @@ function SignupForm({}) {
   } = useForm({
     resolver: yupResolver(signupSchema),
     defaultValues: {
-      identifier: "",
+      identifier: null,
     },
   });
 

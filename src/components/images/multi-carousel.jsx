@@ -1,6 +1,10 @@
 "use client";
 
 import "react-multi-carousel/lib/styles.css";
+import dynamic from "next/dynamic";
+
+// const Carousel = dynamic(() => import("react-multi-carousel"), { ssr: false });
+
 import Carousel from "react-multi-carousel";
 
 export default async function MultiCarousel({ children }) {
@@ -28,6 +32,7 @@ export default async function MultiCarousel({ children }) {
       infinite={true}
       autoPlay={true}
       arrows={false}
+      // ssr={true}
     >
       {children}
     </Carousel>
