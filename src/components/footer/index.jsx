@@ -31,8 +31,8 @@ const pages = [
     path: "/about-us",
   },
   { label: "Events (Masterclass & Mixes)", path: "/events" },
-  { label: "Trips", path: "/trips" },
-  { label: "Media (Podcast & Blogs)", path: "/media" },
+  // { label: "Trips", path: "/trips" },
+  // { label: "Media (Podcast & Blogs)", path: "/media" },
   { label: "Join community", path: "/login" },
 ];
 
