@@ -21,7 +21,7 @@ function Header({ user }) {
       label: "Contact-us",
       path: "/contact-us",
     },
-    // { label: "Events", path: "/events" },
+    { label: "Events", path: "/events" },
     // { label: "Trips", path: "/trips" },
     // { label: "Media", path: "/media" },
   ];
@@ -65,7 +65,7 @@ function Header({ user }) {
               }}
               href="/login"
             >
-              Join Comunity
+              Join Community
             </Button>
           </Box>
 
