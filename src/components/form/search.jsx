@@ -132,16 +132,18 @@ const top100Films = [
   { label: "Monty Python and the Holy Grail", year: 1975 },
 ];
 
-export default function Search() {
+export default function Search({ size = "small" }) {
   return (
     <Autocomplete
       disablePortal
       options={top100Films}
       fullWidth
+      size={size}
       renderInput={(params) => (
         <TextField
           {...params}
           color="text.secondary"
+          placeholder="Search"
           slotProps={{
             input: {
               startAdornment: (

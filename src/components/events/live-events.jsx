@@ -7,9 +7,6 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import { ArrowForwardIosRounded } from "@mui/icons-material";
 
-import Search from "../form/search";
-import BasicSelect from "../form/select";
-
 function MediaCard() {
   return (
     <Card
@@ -77,16 +74,10 @@ export default async function LiveEvents() {
         textAlign={"center"}
         fontFamily={"play"}
       >
-        Search here for Live Events!
+        Trending Live Events!
       </Typography>
       <Toolbar />
       <Grid2 container spacing={5}>
-        <Grid2 size={{ xs: 12, md: 10 }}>
-          <Search size="large" />
-        </Grid2>
-        <Grid2 size={{ xs: 12, md: 2 }}>
-          <BasicSelect />
-        </Grid2>
         {events.map((evt) => (
           <Grid2 size={{ xs: 12, md: 4 }} key={evt.id}>
             <MediaCard item={evt} />

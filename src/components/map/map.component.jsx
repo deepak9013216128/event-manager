@@ -9,11 +9,6 @@ import { Box } from "@mui/material";
 import { GoogleMap } from "@react-google-maps/api";
 
 //Map's styling
-export const defaultMapContainerStyle = {
-  width: "100%",
-  height: "80vh",
-  borderRadius: "15px 0px 0px 15px",
-};
 
 const defaultMapCenter = {
   lat: 26.8943271,
@@ -27,7 +22,12 @@ const defaultMapOptions = {
   //   mapTypeId: "satellite",
 };
 
-const MapComponent = () => {
+const MapComponent = ({ width = null, height = null }) => {
+  const defaultMapContainerStyle = {
+    width: width ?? "100%",
+    height: height ?? "80vh",
+    borderRadius: "15px 0px 0px 15px",
+  };
   return (
     <Box>
       <GoogleMap
