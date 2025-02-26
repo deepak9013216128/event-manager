@@ -32,7 +32,7 @@ function Header({ user }) {
         <Toolbar disableGutters>
           <Link href="/">
             <Image
-              src="/vercel.svg"
+              src="/logolocality.jpg"
               alt="logo"
               width={48}
               height={48}
